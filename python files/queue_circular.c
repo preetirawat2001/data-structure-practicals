@@ -5,19 +5,19 @@
 int items[SIZE];
 int front = -1, rear = -1;
 
-// Check if the queue is full
+
 int isFull() {
   if ((front == rear + 1) || (front == 0 && rear == SIZE - 1)) return 1;
   return 0;
 }
 
-// Check if the queue is empty
+
 int isEmpty() {
   if (front == -1) return 1;
   return 0;
 }
 
-// Adding an element
+
 void enQueue(int element) {
   if (isFull())
     printf("\n Queue is full!! \n");
@@ -29,7 +29,7 @@ void enQueue(int element) {
   }
 }
 
-// Removing an element
+
 int deQueue() {
   int element;
   if (isEmpty()) {
@@ -41,8 +41,7 @@ int deQueue() {
       front = -1;
       rear = -1;
     }
-    // Q has only one element, so we reset the
-    // queue after dequeing it. ?
+    
     else {
       front = (front + 1) % SIZE;
     }
@@ -51,7 +50,7 @@ int deQueue() {
   }
 }
 
-// Display the queue
+
 void display() {
   int i;
   if (isEmpty())
@@ -68,7 +67,7 @@ void display() {
 }
 
 int main() {
-  // Fails because front = -1
+  
   deQueue();
 
   enQueue(1);
@@ -77,7 +76,7 @@ int main() {
   enQueue(4);
   enQueue(5);
 
-  // Fails to enqueue because front == 0 && rear == SIZE - 1
+  
   enQueue(6);
 
   display();
@@ -88,7 +87,7 @@ int main() {
   enQueue(7);
   display();
 
-  // Fails to enqueue because front == rear + 1
+ 
   enQueue(8);
 
   return 0;
